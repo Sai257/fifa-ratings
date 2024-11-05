@@ -4,30 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player Rating Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #ratingForm {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .fifa-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            background: linear-gradient(to bottom, #fff, #f9f9f9);
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
-    <h1>Rate the Player</h1>
-    <form id="ratingForm">
-        <label for="pace">Pace:</label>
-        <input type="number" name="pace" min="0" max="100" required><br>
+    <div id="ratingForm" class="fifa-card">
+        <h1>Rate the Player</h1>
+        <form id="ratingForm">
+            <label for="raterName">Your Name:</label>
+            <select name="raterName" required>
+                <option value="">Select your name</option>
+                <option value="SAI">SAI</option>
+                <option value="AARON">AARON</option>
+                <option value="DIEGO">DIEGO</option>
+                <option value="BRIAN">BRIAN</option>
+                <option value="GARY">GARY</option>
+                <option value="KINGSLEY">KINGSLEY</option>
+            </select><br>
 
-        <label for="shooting">Shooting:</label>
-        <input type="number" name="shooting" min="0" max="100" required><br>
+            <label for="ratedName">Rated Player:</label>
+            <select name="ratedName" required>
+                <option value="">Select your name</option>
+                <option value="SAI">SAI</option>
+                <option value="AARON">AARON</option>
+                <option value="DIEGO">DIEGO</option>
+                <option value="BRIAN">BRIAN</option>
+                <option value="GARY">GARY</option>
+                <option value="KINGSLEY">KINGSLEY</option>
+            </select><br>
 
-        <label for="passing">Passing:</label>
-        <input type="number" name="passing" min="0" max="100" required><br>
+            <label for="pace">Pace:</label>
+            <input type="number" name="pace" min="0" max="100" required><br>
 
-        <label for="dribbling">Dribbling:</label>
-        <input type="number" name="dribbling" min="0" max="100" required><br>
+            <label for="shooting">Shooting:</label>
+            <input type="number" name="shooting" min="0" max="100" required><br>
 
-        <label for="defense">Defense:</label>
-        <input type="number" name="defense" min="0" max="100" required><br>
+            <label for="passing">Passing:</label>
+            <input type="number" name="passing" min="0" max="100" required><br>
 
-        <label for="physical">Physical:</label>
-        <input type="number" name="physical" min="0" max="100" required><br>
+            <label for="dribbling">Dribbling:</label>
+            <input type="number" name="dribbling" min="0" max="100" required><br>
 
-        <button type="submit">Submit Rating</button>
-    </form>
+            <label for="defense">Defense:</label>
+            <input type="number" name="defense" min="0" max="100" required><br>
+
+            <label for="physical">Physical:</label>
+            <input type="number" name="physical" min="0" max="100" required><br>
+
+            <label for="overall_rating">Overall rating:</label>
+            <input type="number" name="overall_rating" min="0" max="100" required><br>
+
+            <button type="submit">Submit Rating</button>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
