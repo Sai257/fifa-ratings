@@ -3,90 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Rating</title>
-    <style>
-        /* Your CSS here */
-    </style>
+    <title>Player Ratings</title>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <h1>Rate Your Players</h1>
-    <form>
-        <label for="pace">Pace</label>
-        <input type="range" id="pace" name="pace" min="1" max="100" oninput="paceValue.textContent = this.value">
-        <span class="slider-value" id="paceValue">50</span>
-
-        <label for="shooting">Shooting</label>
-        <input type="range" id="shooting" name="shooting" min="1" max="100" oninput="shootingValue.textContent = this.value">
-        <span class="slider-value" id="shootingValue">50</span>
-
-        <label for="passing">Passing</label>
-        <input type="range" id="passing" name="passing" min="1" max="100" oninput="passingValue.textContent = this.value">
-        <span class="slider-value" id="passingValue">50</span>
-
-        <label for="dribbling">Dribbling</label>
-        <input type="range" id="dribbling" name="dribbling" min="1" max="100" oninput="dribblingValue.textContent = this.value">
-        <span class="slider-value" id="dribblingValue">50</span>
-
-        <label for="defense">Defense</label>
-        <input type="range" id="defense" name="defense" min="1" max="100" oninput="defenseValue.textContent = this.value">
-        <span class="slider-value" id="defenseValue">50</span>
-
-        <label for="physical">Physical</label>
-        <input type="range" id="physical" name="physical" min="1" max="100" oninput="physicalValue.textContent = this.value">
-        <span class="slider-value" id="physicalValue">50</span>
-
-        <br><br>
-        <button type="button" onclick="submitRatings()">Submit Ratings</button>
+    <h1>Rate the Player</h1>
+    <form id="ratingForm">
+        <label>Pace: <input type="number" name="pace" required></label><br>
+        <label>Shooting: <input type="number" name="shooting" required></label><br>
+        <label>Passing: <input type="number" name="passing" required></label><br>
+        <label>Dribbling: <input type="number" name="dribbling" required></label><br>
+        <label>Defense: <input type="number" name="defense" required></label><br>
+        <label>Physical: <input type="number" name="physical" required></label><br>
+        <button type="submit">Submit Rating</button>
     </form>
-
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"></script>
-    <script>
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "firebase/app";
-        import { getAnalytics } from "firebase/analytics";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-        apiKey: "AIzaSyAjednP2yoqKrq8uRN05Iprnlfe89XSVwY",
-        authDomain: "fifa-18f4f.firebaseapp.com",
-        databaseURL: "https://fifa-18f4f-default-rtdb.firebaseio.com",
-        projectId: "fifa-18f4f",
-        storageBucket: "fifa-18f4f.firebasestorage.app",
-        messagingSenderId: "185013820192",
-        appId: "1:185013820192:web:ca5b566c12aa8c30065545",
-        measurementId: "G-51H1S4REMF"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-
-        // Function to submit ratings
-        function submitRatings() {
-            const ratings = {
-                pace: document.getElementById("pace").value,
-                shooting: document.getElementById("shooting").value,
-                passing: document.getElementById("passing").value,
-                dribbling: document.getElementById("dribbling").value,
-                defense: document.getElementById("defense").value,
-                physical: document.getElementById("physical").value,
-                timestamp: Date.now()
-            };
-
-            // Save ratings to Firebase
-            database.ref('ratings').push(ratings)
-                .then(() => {
-                    alert("Ratings submitted successfully!");
-                })
-                .catch((error) => {
-                    console.error("Error submitting ratings:", error);
-                });
-        }
-    </script>
+    <p id="responseMessage"></p>
 </body>
 </html>
