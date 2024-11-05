@@ -55,7 +55,9 @@ const tableName = "Ratings";    // Name of the table in Airtable
 document.getElementById("ratingForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // Capture and convert form values to numbers
+    // Capture names and convert form values to numbers
+    const raterName = document.querySelector("select[name='raterName']").value;  // Rater's name
+    const ratedName = document.querySelector("select[name='ratedName']").value;  // Rated player's name
     const pace = Number(document.querySelector("input[name='pace']").value);
     const shooting = Number(document.querySelector("input[name='shooting']").value);
     const passing = Number(document.querySelector("input[name='passing']").value);
@@ -63,11 +65,24 @@ document.getElementById("ratingForm").addEventListener("submit", function(event)
     const defense = Number(document.querySelector("input[name='defense']").value);
     const physical = Number(document.querySelector("input[name='physical']").value);
 
-    // Define the data structure
+    // Calculate Overall Rating
+    const overallRating = (pace + shooting + passing + dribbling + defense + physical) / 6;
+
+    // Define the data structure with rater and rated player names
     const data = {
         records: [
             {
-                fields: { pace, shooting, passing, dribbling, defense, physical }
+                fields: { 
+                    raterName, 
+                    ratedName, 
+                    pace, 
+                    shooting, 
+                    passing, 
+                    dribbling, 
+                    defense, 
+                    physical,
+                    overallRating: overallRating > 80 ? overallRating : null // Only save if it's above 80
+                }
             }
         ]
     };
