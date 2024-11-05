@@ -2,12 +2,13 @@ document.getElementById("ratingForm").addEventListener("submit", async function(
     event.preventDefault();
 
     // Get form values
-    const pace = document.querySelector("input[name='pace']").value;
+    const pace = Number(document.querySelector("input[name='pace']").value);
     const shooting = document.querySelector("input[name='shooting']").value;
     const passing = document.querySelector("input[name='passing']").value;
     const dribbling = document.querySelector("input[name='dribbling']").value;
     const defense = document.querySelector("input[name='defense']").value;
     const physical = document.querySelector("input[name='physical']").value;
+    const pace = Number(document.querySelector("input[name='pace']").value);
 
     // Airtable API details
     const apiKey = "patNfcLptJfVOCBf1.072dca7f45b4dee255eaa96f1653018f549768c2298cdcd60a330567c5ef0a1b";  // Replace with your actual API key
