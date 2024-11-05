@@ -3,20 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Ratings</title>
-    <script defer src="script.js"></script>
+    <title>Player Rating Form</title>
 </head>
 <body>
     <h1>Rate the Player</h1>
     <form id="ratingForm">
-        <label>Pace: <input type="number" name="pace" required></label><br>
-        <label>Shooting: <input type="number" name="shooting" required></label><br>
-        <label>Passing: <input type="number" name="passing" required></label><br>
-        <label>Dribbling: <input type="number" name="dribbling" required></label><br>
-        <label>Defense: <input type="number" name="defense" required></label><br>
-        <label>Physical: <input type="number" name="physical" required></label><br>
+        <label for="pace">Pace:</label>
+        <input type="number" name="pace" min="0" max="100" required><br>
+
+        <label for="shooting">Shooting:</label>
+        <input type="number" name="shooting" min="0" max="100" required><br>
+
+        <label for="passing">Passing:</label>
+        <input type="number" name="passing" min="0" max="100" required><br>
+
+        <label for="dribbling">Dribbling:</label>
+        <input type="number" name="dribbling" min="0" max="100" required><br>
+
+        <label for="defense">Defense:</label>
+        <input type="number" name="defense" min="0" max="100" required><br>
+
+        <label for="physical">Physical:</label>
+        <input type="number" name="physical" min="0" max="100" required><br>
+
         <button type="submit">Submit Rating</button>
     </form>
-    <p id="responseMessage"></p>
+
+    <script src="script.js"></script>
 </body>
 </html>
