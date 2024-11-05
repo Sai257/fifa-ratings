@@ -12,7 +12,7 @@ document.getElementById("ratingForm").addEventListener("submit", async function(
     // Airtable API details
     const apiKey = "patNfcLptJfVOCBf1.072dca7f45b4dee255eaa96f1653018f549768c2298cdcd60a330567c5ef0a1b";  // Replace with your actual API key
     const baseId = "appQisc0Nphkb1rii";  // Replace with your base ID from Airtable API documentation
-    const tableName = "ratings";    // Name of the table in Airtable
+    const tableName = "Ratings";    // Name of the table in Airtable
 
     // Prepare API request to Airtable
     const url = `https://api.airtable.com/v0/${baseId}/${tableName}`;
