@@ -75,60 +75,89 @@
             color: #777;
             margin-bottom: 15px;
         }
+
+        #funScale {
+            background: rgba(255, 255, 255, 0.8);  /* Add slight transparency for readability */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            width: 200px;
+            text-align: left;
+        }
+
+        #funScale h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #funScale p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
-    <div id="ratingForm" class="fifa-card">
-        <h1>Rate the Player</h1>
-        <form id="ratingForm">
-            <label for="raterName">Your Name:</label>
-            <select name="raterName" required>
-                <option value="">Select your name</option>
-                <option value="SAI">SAI</option>
-                <option value="AARON">AARON</option>
-                <option value="DIEGO">DIEGO</option>
-                <option value="BRIAN">BRIAN</option>
-                <option value="GARY">GARY</option>
-                <option value="KINGSLEY">KINGSLEY</option>
-                <option value="OSAMA">OSAMA</option>
-            </select><br>
+    <div id="container">
+        <div id="ratingForm" class="fifa-card">
+            <h1>Rate the Player</h1>
+            <form id="ratingForm">
+                <label for="raterName">Your Name:</label>
+                <select name="raterName" required>
+                    <option value="">Select your name</option>
+                    <option value="Alice">Alice</option>
+                    <option value="Bob">Bob</option>
+                    <option value="Charlie">Charlie</option>
+                    <option value="David">David</option>
+                    <option value="Eve">Eve</option>
+                    <option value="Frank">Frank</option>
+                </select><br>
 
-            <label for="ratedName">Rated Player:</label>
-            <select name="ratedName" required>
-                <option value="">Select player to rate</option>
-                <option value="SAI">SAI</option>
-                <option value="AARON">AARON</option>
-                <option value="DIEGO">DIEGO</option>
-                <option value="BRIAN">BRIAN</option>
-                <option value="GARY">GARY</option>
-                <option value="KINGSLEY">KINGSLEY</option>
-                <option value="OSAMA">OSAMA</option>
-            </select><br>
+                <label for="ratedName">Rated Player:</label>
+                <select name="ratedName" required>
+                    <option value="">Select player to rate</option>
+                    <option value="Alice">Alice</option>
+                    <option value="Bob">Bob</option>
+                    <option value="Charlie">Charlie</option>
+                    <option value="David">David</option>
+                    <option value="Eve">Eve</option>
+                    <option value="Frank">Frank</option>
+                </select><br>
 
-            <label for="pace">Pace:</label>
-            <input type="number" name="pace" min="0" max="100" required><br>
+                <label for="pace">Pace:</label>
+                <input type="number" name="pace" min="0" max="100" required><br>
 
-            <label for="shooting">Shooting:</label>
-            <input type="number" name="shooting" min="0" max="100" required><br>
+                <label for="shooting">Shooting:</label>
+                <input type="number" name="shooting" min="0" max="100" required><br>
 
-            <label for="passing">Passing:</label>
-            <input type="number" name="passing" min="0" max="100" required><br>
+                <label for="passing">Passing:</label>
+                <input type="number" name="passing" min="0" max="100" required><br>
 
-            <label for="dribbling">Dribbling:</label>
-            <input type="number" name="dribbling" min="0" max="100" required><br>
+                <label for="dribbling">Dribbling:</label>
+                <input type="number" name="dribbling" min="0" max="100" required><br>
 
-            <label for="defense">Defense:</label>
-            <input type="number" name="defense" min="0" max="100" required><br>
+                <label for="defense">Defense:</label>
+                <input type="number" name="defense" min="0" max="100" required><br>
 
-            <label for="physical">Physical:</label>
-            <input type="number" name="physical" min="0" max="100" required><br>
+                <label for="physical">Physical:</label>
+                <input type="number" name="physical" min="0" max="100" required><br>
 
-            <label for="overallRating">Overall Rating:</label>
-            <input type="number" name="overallRating" min="0" max="100" required>
-            <div class="description">Please rate above 80.</div>
+                <label for="overallRating">Overall Rating:</label>
+                <input type="number" name="overallRating" min="0" max="100" required>
+                <div class="description">Please rate above 80.</div>
 
-            <button type="submit">Submit Rating</button>
-        </form>
+                <button type="submit">Submit Rating</button>
+            </form>
+        </div>
+        
+        <div id="funScale">
+            <h2>Fun Rating Scale</h2>
+            <p>30 - you suck</p>
+            <p>40 - maybe a substitute</p>
+            <p>50 - bad</p>
+            <p>60 - not bad</p>
+            <p>70 - okay</p>
+            <p>80 - good</p>
+            <p>90 - excellent</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
